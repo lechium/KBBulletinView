@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :tvos, '9.0'
+
+target 'KBBulletinView_Example' do
+  pod 'KBBulletinView', :path => '../'
+
+  target 'KBBulletinView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
