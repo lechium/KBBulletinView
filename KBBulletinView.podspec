@@ -36,7 +36,7 @@ This project is an effort to create local application notifications/alerts simil
   #   'KBBulletinView' => ['KBBulletinView/Assets/*.png']
   # }
 
-  s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
