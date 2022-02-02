@@ -16,7 +16,7 @@
 @implementation KBViewController
 
 - (IBAction)showSampleBulletin:(id)sender {
-    KBBulletinView *bv = [KBBulletinView bulletinWithTitle:@"Controller" description:@"Connected" image:[[UIImage imageNamed:@"gamecontroller"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    KBBulletinView *bv = [KBBulletinView bulletinWithTitle:@"Controller with a really long title" description:@"Connected with a long and hopefully wrapping description." image:[[UIImage imageNamed:@"gamecontroller"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [bv showForTime:5];
 }
 

@@ -101,6 +101,7 @@
     UIStackView *_myStackView = [[UIStackView alloc] initWithArrangedSubviews:@[_titleLabel, _descriptionLabel]];
     _myStackView.axis = UILayoutConstraintAxisVertical;
     _myStackView.translatesAutoresizingMaskIntoConstraints = false;
+    _myStackView.spacing = 5;
     [backgroundView addSubview:_myStackView];
     [_myStackView.trailingAnchor constraintEqualToAnchor:backgroundView.trailingAnchor constant:-stackTrailing].active = true;
     _imageView = [[UIImageView alloc] init];
@@ -144,8 +145,9 @@
         [self.topAnchor constraintEqualToAnchor:viewController.view.topAnchor constant:60].active = true;
         __weak __typeof(self) weakSelf = self;
         [UIView animateWithDuration:0.3 animations:^{
-            weakSelf.alpha = 1.0;
-            weakSelf.transform = CGAffineTransformIdentity;
+            self.alpha = 1.0;
+            self.transform = CGAffineTransformIdentity;
+            [self layoutIfNeeded];
         } completion:^(BOOL finished) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakSelf hideView];

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KBBulletinView'
-  s.version          = '1.1'
+  s.version          = '1.2'
   s.summary          = 'Bulletin / Toast style view for tvOS.'
 
 # This description is used to generate tags and improve search results.

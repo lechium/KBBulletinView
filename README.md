@@ -18,7 +18,8 @@ This project is an effort to create local application notifications/alerts simil
 
 ```
 
-![Screenshot](BulletinSample.png "Screenshot")  <br/>
+![Screenshot](BulletinSample.png "Normal Size")  <br/>
+![Screenshot](LongTitle.png "Long Title & Description")  <br/>
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
