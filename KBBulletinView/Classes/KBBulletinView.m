@@ -9,8 +9,6 @@
 #import "KBBulletinView.h"
 
 @interface KBBulletinView() {
-    NSString *_bulletinTitle;
-    NSString *_bulletinDescription;
     UIImage *_bulletinImage;
 }
 
@@ -67,8 +65,6 @@
     self.translatesAutoresizingMaskIntoConstraints = false;
     [self.heightAnchor constraintEqualToConstant:130].active = true;
     [self.widthAnchor constraintEqualToConstant:width].active = true;
-    //[self autoConstrainToSize:CGSizeMake(width, 130)];
-    //[backgroundView autoPinEdgesToSuperviewEdges];
     backgroundView.translatesAutoresizingMaskIntoConstraints = false;
     [backgroundView.leadingAnchor constraintEqualToAnchor:self.leadingAnchor].active = true;
     [backgroundView.trailingAnchor constraintEqualToAnchor:self.trailingAnchor].active = true;
@@ -83,13 +79,11 @@
     UIVisualEffectView *vibrancyEffectView = [[UIVisualEffectView alloc] initWithEffect:vibrancyEffect];
     vibrancyEffectView.translatesAutoresizingMaskIntoConstraints = false;
     [backgroundView addSubview:blurView];
-    //[blurView autoPinEdgesToSuperviewEdges];
     [blurView.leadingAnchor constraintEqualToAnchor:backgroundView.leadingAnchor].active = true;
     [blurView.trailingAnchor constraintEqualToAnchor:backgroundView.trailingAnchor].active = true;
     [blurView.topAnchor constraintEqualToAnchor:backgroundView.topAnchor].active = true;
     [blurView.bottomAnchor constraintEqualToAnchor:backgroundView.bottomAnchor].active = true;
     [backgroundView addSubview:vibrancyEffectView];
-    //[vibrancyEffectView autoPinEdgesToSuperviewEdges];
     [vibrancyEffectView.leadingAnchor constraintEqualToAnchor:backgroundView.leadingAnchor].active = true;
     [vibrancyEffectView.trailingAnchor constraintEqualToAnchor:backgroundView.trailingAnchor].active = true;
     [vibrancyEffectView.topAnchor constraintEqualToAnchor:backgroundView.topAnchor].active = true;
@@ -114,12 +108,10 @@
     _imageView.translatesAutoresizingMaskIntoConstraints = false;
     _imageView.contentMode = UIViewContentModeScaleAspectFit;
     _imageView.translatesAutoresizingMaskIntoConstraints = false;
-    //[_imageView autoConstrainToSize:CGSizeMake(imageDimension, imageDimension)];
     [_imageView.heightAnchor constraintEqualToConstant:imageDimension].active = true;
     [_imageView.widthAnchor constraintEqualToConstant:imageDimension].active = true;
     [backgroundView addSubview:_imageView];
     [_myStackView.leftAnchor constraintEqualToAnchor:_imageView.rightAnchor constant:stackLeading].active = true;
-    //[_imageView autoCenterVerticallyInSuperview];
     [_imageView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = true;
     [_myStackView.centerYAnchor constraintEqualToAnchor:_imageView.centerYAnchor].active = true;
     [_imageView.leftAnchor constraintEqualToAnchor:backgroundView.leftAnchor constant:imageLeading].active = true;
