@@ -7,12 +7,18 @@
 //
 
 #import "KBViewController.h"
+#import <KBBulletinView/KBBulletinView.h>
 
 @interface KBViewController ()
 
 @end
 
 @implementation KBViewController
+
+- (IBAction)showSampleBulletin:(id)sender {
+    KBBulletinView *bv = [KBBulletinView bulletinWithTitle:@"Controller" description:@"Connected" image:[[UIImage imageNamed:@"gamecontroller"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    [bv showForTime:5];
+}
 
 - (void)viewDidLoad
 {

@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KBBulletinView'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of KBBulletinView.'
+  s.version          = '1.0'
+  s.summary          = 'Bulletin / Toast style view for tvOS. '
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,17 +18,17 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+This project is an effort to create local application notifications/alerts similar to those used by Apple in the top right when various system events occur (ie devices attach/detach, internet connectivity changes, etc).
                        DESC
 
   s.homepage         = 'https://github.com/lechium/KBBulletinView'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots     = 'https://github.com/lechium/KBBulletinView/blob/master/BulletinSample.png?raw=true'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'lechium' => 'kevin.w.bradley@me.com' }
   s.source           = { :git => 'https://github.com/lechium/KBBulletinView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.tvos.deployment_target = '9.0'
+  s.tvos.deployment_target = '10.0'
 
   s.source_files = 'KBBulletinView/Classes/**/*'
   
@@ -36,7 +36,7 @@ TODO: Add long description of the pod here.
   #   'KBBulletinView' => ['KBBulletinView/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

@@ -19,6 +19,17 @@
                     <view key="view" contentMode="scaleToFill" id="yZT-xe-sld">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xl-Up-zqM">
+                                <rect key="frame" x="739" y="497" width="442" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Show Sample Bulletin"/>
+                                <connections>
+                                    <action selector="showSampleBulletin:" destination="JyU-o3-IAx" eventType="primaryActionTriggered" id="lER-f9-EFb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="igB-lB-oyA"/>
                     </view>
                 </viewController>

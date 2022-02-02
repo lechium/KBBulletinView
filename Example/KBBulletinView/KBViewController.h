@@ -9,5 +9,5 @@
 @import UIKit;
 
 @interface KBViewController : UIViewController
-
+- (IBAction)showSampleBulletin:(id)sender;
 @end
