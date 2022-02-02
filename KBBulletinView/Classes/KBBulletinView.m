@@ -15,7 +15,6 @@
 @property (nonatomic) UILabel *titleLabel;
 @property (nonatomic) UILabel *descriptionLabel;
 @property (nonatomic) UIImageView *imageView;
-@property (nonatomic) NSTimer *hideTimer;
 
 @end
 
@@ -57,7 +56,7 @@
     //add width of the image view, its left margin and our space from that to this value + our trailing value and see if its bigger than our size
     CGFloat imageDimension = 70;
     CGFloat imageLeading = 25;
-    CGFloat stackLeading = 15;
+    CGFloat stackLeading = 18;
     CGFloat stackTrailing = 45;
     CGFloat width = imageDimension + imageLeading + stackTrailing + boundingWidth + stackLeading + 5;
     width = MAX(355, width);
@@ -144,14 +143,13 @@
         [self.rightAnchor constraintEqualToAnchor:viewController.view.rightAnchor constant:-80].active = true;
         [self.topAnchor constraintEqualToAnchor:viewController.view.topAnchor constant:60].active = true;
         __weak __typeof(self) weakSelf = self;
-        //@weakify(self);
         [UIView animateWithDuration:0.3 animations:^{
             weakSelf.alpha = 1.0;
             weakSelf.transform = CGAffineTransformIdentity;
         } completion:^(BOOL finished) {
-            weakSelf.hideTimer = [NSTimer scheduledTimerWithTimeInterval:duration repeats:false block:^(NSTimer * _Nonnull timer) {
-                [self hideView];
-            }];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [weakSelf hideView];
+            });
         }];
     }
 }

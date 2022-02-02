@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KBBulletinView'
-  s.version          = '1.0'
-  s.summary          = 'Bulletin / Toast style view for tvOS. '
+  s.version          = '1.1'
+  s.summary          = 'Bulletin / Toast style view for tvOS.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -28,7 +28,7 @@ This project is an effort to create local application notifications/alerts simil
   s.source           = { :git => 'https://github.com/lechium/KBBulletinView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.tvos.deployment_target = '10.0'
+  s.tvos.deployment_target = '9.0'
 
   s.source_files = 'KBBulletinView/Classes/**/*'
   
