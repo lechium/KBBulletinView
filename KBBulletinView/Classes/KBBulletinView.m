@@ -29,11 +29,11 @@
     _imageView.image = _bulletinImage;
 }
 
-+ (instancetype)bulletinWithTitle:(NSString *)title description:(NSString *)desc image:(UIImage * _Nullable)image {
++ (instancetype)bulletinWithTitle:(NSString *)title description:(NSString *_Nullable)desc image:(UIImage * _Nullable)image {
     return [[KBBulletinView alloc] initWithTitle:title description:desc image:image];
 }
 
-- (instancetype)initWithTitle:(NSString *)title description:(NSString *)desc image:(UIImage *_Nullable)image {
+- (instancetype)initWithTitle:(NSString *)title description:(NSString *_Nullable)desc image:(UIImage *_Nullable)image {
     self = [super init];
     if (self) {
         _bulletinTitle = title;
@@ -135,14 +135,16 @@
     }];
 }
 
-- (void)showForTime:(CGFloat)duration {
-    UIViewController *viewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
-    if (viewController) {
+- (void)showFromController:(UIViewController *_Nullable)controller forTime:(CGFloat)duration {
+    if (!controller){
+        controller = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    }
+    if (controller) {
         self.alpha = 0;
         self.transform = CGAffineTransformScale(self.transform, 0.01, 0.01);
-        [viewController.view addSubview:self];
-        [self.rightAnchor constraintEqualToAnchor:viewController.view.rightAnchor constant:-80].active = true;
-        [self.topAnchor constraintEqualToAnchor:viewController.view.topAnchor constant:60].active = true;
+        [controller.view addSubview:self];
+        [self.rightAnchor constraintEqualToAnchor:controller.view.rightAnchor constant:-80].active = true;
+        [self.topAnchor constraintEqualToAnchor:controller.view.topAnchor constant:60].active = true;
         __weak __typeof(self) weakSelf = self;
         [UIView animateWithDuration:0.3 animations:^{
             self.alpha = 1.0;
@@ -154,6 +156,10 @@
             });
         }];
     }
+}
+
+- (void)showForTime:(CGFloat)duration {
+    [self showFromController:nil forTime:duration];
 }
 
 @end

@@ -16,9 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *bulletinDescription;
 @property (nonatomic, strong) UIImage *bulletinImage;
 
-+ (instancetype)bulletinWithTitle:(NSString *)title description:(NSString *)desc image:(UIImage * _Nullable)image;
-- (instancetype)initWithTitle:(NSString *)title description:(NSString *)desc image:(UIImage * _Nullable )image;
++ (instancetype)bulletinWithTitle:(NSString *)title description:(NSString *_Nullable)desc image:(UIImage * _Nullable)image;
+- (instancetype)initWithTitle:(NSString *)title description:(NSString *_Nullable)desc image:(UIImage * _Nullable )image;
 - (void)showForTime:(CGFloat)duration;
+- (void)showFromController:(UIViewController *_Nullable)controller forTime:(CGFloat)duration;
 - (void)hideView;
 @end
 
